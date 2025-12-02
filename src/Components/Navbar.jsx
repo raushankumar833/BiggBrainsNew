@@ -28,8 +28,8 @@ export default function Navbar() {
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
     { label: "Our Services", path: "/services" },
-    { label: "Our Partners", path: "/partners" },
-    { label: "Contact Us", path: "/contact" }
+    { label: "Contact Us", path: "/contact" },
+    { label: "Join BiggBrains", path: "/join-us" }
   ];
 
   const toggleDrawer = (open) => (event) => {
