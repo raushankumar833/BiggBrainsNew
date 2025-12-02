@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import HomeHero from "../Components/HomeHero";
+import HomeCenter from "../Components/HomeCenter";
+import HelpYou from "../Components/HelpYou";
+import CoreValues from "../Components/CoreValues";
+import BusinessStats from "../Components/BusinessStats";
+import Mission from "../Components/Mission";
+import HeroSection from "../Components/HeroSection";
 
-const Home = () => {
+function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div>Home</div>
-  )
+    <>
+      <HomeHero />
+      <HomeCenter />
+      <HelpYou/>
+      <CoreValues/>
+      <BusinessStats/>
+      <Mission/>
+      <HeroSection/>
+    </>
+  );
 }
 
-export default Home
+export default Home;
