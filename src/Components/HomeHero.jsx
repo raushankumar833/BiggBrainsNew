@@ -11,8 +11,8 @@ export default function HomeHero() {
         position: "relative",
         bgcolor: "#fdfdfd",
         maxWidth: "100%",
-        height: {xs:"90vh", md:"100vh"},
-      mt: { xs: 25 ,md:1}
+        height: { xs: "90vh", md: "100vh" },
+        mt: { xs: 25, md: 1 },
       }}
     >
       <Grid
@@ -32,53 +32,67 @@ export default function HomeHero() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
-            alignItems: "center",
-            mt: { xs: 4, md: 26 },
+            alignItems: "flex-start",
+            mt: { xs: 6, md: 23 },
+            ml: { md: 4 },
+            px: { xs: 1, md: 0 },
           }}
         >
           <Typography
-            variant="h2"
+            variant="h3"
             sx={{
-              fontWeight: 800,
+              fontSize: { xs: "1rem", md: "3.4rem" },
+              fontWeight: 900,
               color: "#2e1a63",
-              fontFamily: "serif",
-              mb: 2,
-              letterSpacing: "0.02em",
-              lineHeight: 1,
+              fontFamily: "Poppins, serif",
+              mb: 2.5,
+              letterSpacing: "0.05em",
+              lineHeight: 1.05,
+              textTransform: "uppercase",
             }}
           >
-            Your Trusted <br />
-            Partner in Digital <br />
-            Finance.!
+            Creating Great
+            <br />
+            Brands With
+            <br />
+            Great Ideas
           </Typography>
 
           <Typography
             variant="body1"
             sx={{
-              fontWeight: 550,
-              mb: 3,
-              maxWidth: 500,
-              fontSize: "1.1rem",
-              color: "text.secondary",
+              fontWeight: 500,
+              mb: 4,
+              maxWidth: 520,
+              fontSize: { xs: "1rem", md: "1rem" },
+              color: "#5f5f78",
+              lineHeight: 1.7,
             }}
           >
-            P2PAE is a trusted fintech leader with 10+ years of experience,
-            simplifying and securing online transactions. Recognized as one of
-            India’s fastest-growing names, we help businesses streamline
-            payments, boost security, and scale with confidence.
+            BiggBrains Solutions is registered with the Ministry of Corporate
+            Affairs, delivering technology-driven websites, software and mobile
+            applications that grow modern businesses.
           </Typography>
 
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2.5}>
             <Button
               variant="contained"
               startIcon={<DownloadIcon />}
               sx={{
-                backgroundColor: "#1a1333",
+                background: "linear-gradient(135deg, #1a1333, #3a1d6a)",
                 textTransform: "uppercase",
-                px: 3,
-                py: 1.5,
-                fontWeight: 600,
-                "&:hover": { backgroundColor: "#2d1f55" },
+                px: 4,
+                py: 1.2,
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                borderRadius: "14px",
+                boxShadow: "0 12px 25px rgba(26, 19, 51, 0.25)",
+                transition: "0.3s ease",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #2d1f55, #523094)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 15px 28px rgba(26, 19, 51, 0.35)",
+                },
               }}
             >
               Download App
@@ -88,15 +102,23 @@ export default function HomeHero() {
               variant="outlined"
               startIcon={<FlashOnIcon />}
               sx={{
-                borderColor: "#1a1333",
+                border: "2px solid #1a1333",
                 color: "#1a1333",
-                px: 3,
-                py: 1.5,
-                fontWeight: 600,
-                "&:hover": { borderColor: "#2d1f55", color: "#2d1f55" },
+                px: 4,
+                py: 1.2,
+                fontWeight: 700,
+                borderRadius: "14px",
+                letterSpacing: "0.05em",
+                transition: "0.3s ease",
+                "&:hover": {
+                  backgroundColor: "rgba(26,19,51,0.05)",
+                  borderColor: "#2d1f55",
+                  color: "#2d1f55",
+                  transform: "translateY(-2px)",
+                },
               }}
             >
-              Get Started for Free
+              Get Started
             </Button>
           </Stack>
         </Grid>
@@ -107,16 +129,18 @@ export default function HomeHero() {
           xs={12}
           md={6}
           sx={{
+            position: "absolute",
+            right: { xs: "-40px", md: "9px" },
+            top: { xs: "40%", md: "50%" },
+            transform: "translateY(-50%)",
             display: "flex",
             justifyContent: "space-between",
-            mt: { xs: 4, md: 0 },
+            gap: 1.3,
             opacity: {
               xs: 0.1,
               sm: 0.2,
               md: 1,
             },
-            ml: 85,
-            position: "absolute",
           }}
         >
           {/* Left Image Column */}
@@ -125,35 +149,28 @@ export default function HomeHero() {
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: "1100px",
-              position: "relative",
-              bottom: 370,
+              height: "100vh",
             }}
           >
             <motion.div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-              animate={{ y: ["0%", "-5%"] }} // scroll half (so loop continues seamlessly)
+              style={{ display: "flex", flexDirection: "column" }}
+              animate={{ y: ["0%","-10%"] }}
               transition={{
                 repeat: Infinity,
-                duration: 20,
+                duration: 31,
                 ease: "linear",
               }}
             >
-              {/* Duplicate the image set twice */}
-              {[...Array(8)].map((_, i) => (
+              {[...Array(10)].map((_, i) => (
                 <img
                   key={i}
-                  src="/src/assets/SITE DESIGN .png"
+                  src="/src/assets/LeftImage.png"
                   alt="scroll image"
                   style={{
-                    width: "85%",
-                    maxWidth: "220px",
+                    width: "100%",
+                    maxWidth: "240px",
                     height: "auto",
-                    display: "block",
-                    marginBottom: "1rem",
+                    marginBottom: "-1rem",
                   }}
                 />
               ))}
@@ -166,34 +183,28 @@ export default function HomeHero() {
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: "1100px",
-              position: "relative",
-              bottom: 370,
+              height: "100vh",
             }}
           >
             <motion.div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
+              style={{ display: "flex", flexDirection: "column" }}
               animate={{ y: ["-10%", "0%"] }}
               transition={{
                 repeat: Infinity,
-                duration: 18,
+                duration: 31,
                 ease: "linear",
               }}
             >
               {[...Array(10)].map((_, i) => (
                 <img
                   key={i}
-                  src="/src/assets/SITE DESIGN .png"
+                  src="/src/assets/RightImage.png"
                   alt="scroll image"
                   style={{
-                    width: "95%",
-                    maxWidth: "420px",
+                    width: "100%",
+                    maxWidth: "730px",
                     height: "auto",
-                    display: "block",
-                    marginBottom: "1rem",
+                    marginBottom: "-1rem",
                   }}
                 />
               ))}

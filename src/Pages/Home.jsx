@@ -4,7 +4,7 @@ import HomeCenter from "../Components/HomeCenter";
 import HelpYou from "../Components/HelpYou";
 import CoreValues from "../Components/CoreValues";
 import BusinessStats from "../Components/BusinessStats";
-import Mission from "../Components/Mission";
+import WorkHistory from "../Components/WorkHistory";
 import HeroSection from "../Components/HeroSection";
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
       <HelpYou/>
       <CoreValues/>
       <BusinessStats/>
-      <Mission/>
+      <WorkHistory/>
       <HeroSection/>
     </>
   );
