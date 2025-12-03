@@ -81,7 +81,7 @@ const AboutHero = () => {
           variant="contained"
           sx={{
             background: "linear-gradient(90deg, #1e90ff, #00aaff)",
-            padding: "10px 25px",
+            padding: "5px 15px",
             fontSize: "1.1rem",
             fontWeight: 700,
             borderRadius: "50px",
