@@ -6,7 +6,7 @@ const BusinessStats = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#5A2DFA", // purple background
+        background: "linear-gradient(135deg, #FB923C 20%, #EC4899 100%)",
         color: "#fff",
         p: { xs: 3, sm: 4, md: 8 }, // responsive padding
       }}
@@ -23,7 +23,7 @@ const BusinessStats = () => {
             variant="h4"
             sx={{
               fontWeight: "bold",
-              color: "#f6a04d",
+              color: "#111111",
               mb: { xs: 1, sm: 2 },
               textAlign: { xs: "center", md: "left" },
             }}
@@ -150,36 +150,40 @@ const BusinessStats = () => {
 
             {/* Quote */}
             <motion.div
-                  whileHover={{
-                    scale: [null, 1.05, 1.05],
-                    transition: {
-                      duration: 0.5,
-                      times: [0, 0.6, 1],
-                      ease: ["easeInOut", "easeOut"],
-                    },
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeOut",
-                  }}>
-            <Paper
-              elevation={3}
-              sx={{
-                p: { xs: 2, sm: 3 },
-                borderRadius: 3,
-                width: "100%",
-                maxWidth: { xs: 320, sm: 400, md: 450 },
-                backgroundColor: "#fff",
-                color: "#1a1a1a",
-                fontStyle: "italic",
+              whileHover={{
+                scale: [null, 1.05, 1.05],
+                transition: {
+                  duration: 0.5,
+                  times: [0, 0.6, 1],
+                  ease: ["easeInOut", "easeOut"],
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
               }}
             >
-              <Typography variant="body2" sx={{ fontSize: { xs: 14, sm: 16 } }}>
-                “Since embracing our neo banking platform, our financial
-                management has soared, witnessing an impressive 80% boost in
-                productivity over the past year.”
-              </Typography>
-            </Paper>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: { xs: 2, sm: 3 },
+                  borderRadius: 3,
+                  width: "100%",
+                  maxWidth: { xs: 320, sm: 400, md: 450 },
+                  backgroundColor: "#fff",
+                  color: "#1a1a1a",
+                  fontStyle: "italic",
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{ fontSize: { xs: 14, sm: 16 } }}
+                >
+                  “Since embracing our neo banking platform, our financial
+                  management has soared, witnessing an impressive 80% boost in
+                  productivity over the past year.”
+                </Typography>
+              </Paper>
             </motion.div>
           </Box>
         </Grid>

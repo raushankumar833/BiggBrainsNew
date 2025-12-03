@@ -73,7 +73,7 @@ export default function Navbar() {
           component="img"
           src="/src/assets/BiggBrainsLogo.svg"
           alt="logo"
-          sx={{ height: 66, ml:1 }}
+          sx={{ height: 66, ml: 1 }}
         />
         <IconButton onClick={toggleDrawer(false)} sx={{ color: "white" }}>
           <CloseIcon />
@@ -181,7 +181,7 @@ export default function Navbar() {
         <Button
           variant="contained"
           sx={{
-            backgroundColor: "#7C2EE5",
+            background: "linear-gradient(135deg, #1a1333, #0c345f)",
             borderRadius: 2,
             textTransform: "none",
             px: { md: 2.5, lg: 3 },

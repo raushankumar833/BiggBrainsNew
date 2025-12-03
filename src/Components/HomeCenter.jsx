@@ -51,7 +51,7 @@ const HomeCenter = () => {
     <Box
       sx={{
         py: { xs: 8, md: 12 },
-        background: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)",
+        background: "linear-gradient(135deg, #0f0c29, #0c345f, #24243e)",
       }}
     >
       <Container maxWidth="lg">
@@ -144,7 +144,8 @@ const HomeCenter = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        background: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                        background:
+                          "linear-gradient(135deg, #FB923C 20%, #EC4899 100%)",
                       }}
                     >
                       {value.icon}

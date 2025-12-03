@@ -43,7 +43,7 @@ export default function HomeHero() {
             sx={{
               fontSize: { xs: "1.5rem", sm: "2.4rem", md: "3.4rem" }, // ✅ FIX
               fontWeight: 900,
-              color: "#2e1a63",
+              color: "#0c345f",
               fontFamily: "Poppins, serif",
               mb: 2.5,
               letterSpacing: "0.05em",
@@ -83,7 +83,7 @@ export default function HomeHero() {
               variant="contained"
               startIcon={<DownloadIcon />}
               sx={{
-                background: "linear-gradient(135deg, #1a1333, #3a1d6a)",
+                background: "linear-gradient(135deg, #1a1333, #0c345f)",
                 textTransform: "uppercase",
                 px: { xs: 2.5, md: 4 }, // ✅ FIX
                 py: 1.2,
@@ -101,8 +101,8 @@ export default function HomeHero() {
               variant="outlined"
               startIcon={<FlashOnIcon />}
               sx={{
-                border: "2px solid #1a1333",
-                color: "#1a1333",
+                border: "1px solid #0c345f",
+                color: "#0c345f",
                 px: { xs: 0.5, md: 4 }, // ✅ FIX
                 py: { xs: 0.5, md: 1.2 },
                 fontWeight: 700,
