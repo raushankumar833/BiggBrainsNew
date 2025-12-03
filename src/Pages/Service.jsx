@@ -15,6 +15,7 @@ import WebIcon from "@mui/icons-material/Web";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 import { motion } from "framer-motion";
+import ConnectUs from "../Components/ConnectUs";
 
 const whatWeDo = [
   {
@@ -50,6 +51,7 @@ const Service = () => {
     <Box
       sx={{
         mt: "2rem",
+        mb: "9rem",
         py: { xs: 8, md: 12 },
         background: "#ffffff",
       }}
@@ -175,6 +177,7 @@ const Service = () => {
           ))}
         </Grid>
       </Container>
+      <ConnectUs/>
     </Box>
   );
 };

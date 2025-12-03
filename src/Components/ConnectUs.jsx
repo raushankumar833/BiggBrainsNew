@@ -16,7 +16,7 @@ const ConnectUs = () => {
       sx={{
         py: { xs: 6, md: 10 },
         px: { xs: 2, md: 6 },
-        background: "linear-gradient(90deg, #0f172a, #1e1b4b, #2e1065)",
+        background: "linear-gradient(135deg, #0f0c29, #0c345f, #24243e)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
