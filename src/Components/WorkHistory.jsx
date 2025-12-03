@@ -47,7 +47,7 @@ const WorkHistory = () => {
         <Grid item xs={12} md={10} lg={8}>
           <Box
             component="img"
-            src="/src/assets/work-history1.png"
+            src="/src/assets/work-history.jpeg"
             alt="Work History"
             sx={{
               width: {

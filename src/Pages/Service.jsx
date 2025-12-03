@@ -51,7 +51,6 @@ const Service = () => {
     <Box
       sx={{
         mt: "2rem",
-        mb: "9rem",
         py: { xs: 8, md: 12 },
         background: "#ffffff",
       }}

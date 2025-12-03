@@ -52,7 +52,7 @@ const AboutHero = () => {
           sx={{
             fontWeight: "900",
             fontSize: { xs: "2.8rem", md: "4rem" },
-            letterSpacing: "0.12em",
+            letterSpacing: "0.1em",
             mt: { xs: "80px", md: "2px" },
             mb: 3,
             lineHeight: 1.1,
