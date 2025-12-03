@@ -20,7 +20,7 @@ const BusinessStats = () => {
         {/* Left Side */}
         <Grid item xs={12} md={6}>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
               fontWeight: "bold",
               color: "#111111",
@@ -36,7 +36,7 @@ const BusinessStats = () => {
             transition={{ duration: 9 }}
           >
             <Typography
-              variant="h3"
+              variant="h2"
               sx={{
                 fontWeight: "bold",
                 color: "#fff",
@@ -137,13 +137,17 @@ const BusinessStats = () => {
                   borderRadius: 3,
                   overflow: "hidden",
                   width: "100%",
-                  maxWidth: { xs: 320, sm: 400, md: 500 },
+                  maxWidth: { xs: 220, sm: 300, md: 360 },
                 }}
               >
                 <img
                   src="/src/assets/CodingImage.jpeg"
                   alt="Illustration"
-                  style={{ width: "100%", height: "auto" }}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "12px",
+                  }}
                 />
               </Paper>
             </motion.div>
