@@ -222,7 +222,7 @@ const Footer = () => {
                   color: "#666",
                 }}
               >
-                7011256694
+                011-49954822
               </Typography>
               <Typography
                 sx={{

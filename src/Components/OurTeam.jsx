@@ -224,19 +224,15 @@ export default function OurTeam() {
                 src={member.img}
                 alt={member.name}
                 sx={{
-                  flex: "0 0 280px",
-                  p: 4,
-                  mt: 4,
-                  borderRadius: 5,
-                  textAlign: "center",
-                  background: "transparent",
-                  boxShadow: "0 10px 35px rgba(0,0,0,0.08)",
-                  transition: "0.4s",
-                  cursor: "pointer",
-                  "&:hover": {
-                    transform: "translateY(-12px) scale(1.05)",
-                    boxShadow: "0 20px 50px rgba(0,0,0,0.2)",
-                  },
+                  width: 160,
+                  height: 160,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  margin: "0 auto 20px",
+                  border: "5px solid #e6f2ff",
+                  boxShadow: "0 12px 30px rgba(30,144,255,0.35)",
+                  transition: "transform 0.35s ease, box-shadow 0.35s ease",
+                  "&:hover": { transform: "scale(1.15)", boxShadow: "0 15px 45px rgba(30,144,255,0.55)" },
                 }}
               />
 
