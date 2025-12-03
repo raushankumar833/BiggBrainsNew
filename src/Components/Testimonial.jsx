@@ -176,10 +176,10 @@ const Testimonial = () => {
             Who love our work
           </Typography>
           <Typography variant="body1" sx={{ opacity: 0.9 }}>
-            Our goal is to create a product and service that you’re satisfied with
-            and use it every day. This is why we’re constantly working on our
-            services to make it better every day and really listen to what our
-            users has to say.
+            Our goal is to create a product and service that you’re satisfied
+            with and use it every day. This is why we’re constantly working on
+            our services to make it better every day and really listen to what
+            our users has to say.
           </Typography>
         </Box>
       </Box>
@@ -200,7 +200,7 @@ const Testimonial = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            animation: "scrollUp 35s linear infinite",
+            animation: "scrollUp 60s linear infinite",
             alignItems: "center",
             justifyContent: "center",
             width: "100%",
@@ -230,7 +230,7 @@ const Testimonial = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            animation: "scrollUp 35s linear infinite",
+            animation: "scrollUp 60s linear infinite",
             alignItems: "center",
             justifyContent: "center",
             width: "50%",
@@ -279,11 +279,9 @@ const Testimonial = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            animation: "scrollUp 35s linear infinite",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            padding: 0,
+            height: "max-content",
+            animation: "scrollUp 40s linear infinite",
+            willChange: "transform",
           }}
         >
           {[...testimonials, ...testimonials].map((t, i) => (
@@ -295,12 +293,9 @@ const Testimonial = () => {
           sx={{
             display: "flex",
             flexDirection: "column-reverse",
-            ml: 4,
-            animation: "scrollDown 35s linear infinite",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            padding: 0,
+            height: "max-content",
+            animation: "scrollDown 40s linear infinite",
+            willChange: "transform",
           }}
         >
           {[...testimonials, ...testimonials].map((t, i) => (
@@ -365,10 +360,10 @@ const Testimonial = () => {
             Who love our work
           </Typography>
           <Typography variant="body1" sx={{ opacity: 0.9 }}>
-            Our goal is to create a product and service that you’re satisfied with
-            and use it every day. This is why we’re constantly working on our
-            services to make it better every day and really listen to what our
-            users has to say.
+            Our goal is to create a product and service that you’re satisfied
+            with and use it every day. This is why we’re constantly working on
+            our services to make it better every day and really listen to what
+            our users has to say.
           </Typography>
         </Box>
       </Box>
@@ -376,14 +371,17 @@ const Testimonial = () => {
       {/* ---------------- Keyframes ---------------- */}
       <style>
         {`
-          @keyframes scrollUp {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
-          }
-          @keyframes scrollDown {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100%); }
-          }
+         @keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+
         `}
       </style>
     </Box>
