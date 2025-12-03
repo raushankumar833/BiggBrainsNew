@@ -1,12 +1,10 @@
 import React from "react";
 import { Box, Typography, Button, LinearProgress, Stack, keyframes } from "@mui/material";
-import AboutHero from "./AboutHero";
-import AboutHero2 from "./AboutHero2";
-import OurTeam from "./OurTeam";
-import Testimonial from "./Testimonial";
 import ConnectUs from "../Components/ConnectUs";
-
-
+import AboutHero from "../Components/AboutHero";
+import AboutHero2 from "../Components/AboutHero2";
+import Testimonial from "../Components/Testimonial";
+import OurTeam from "../Components/OurTeam";
 
 export default function AboutUs() {
   return (

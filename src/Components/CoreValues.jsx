@@ -18,25 +18,25 @@ const coreValues = [
     icon: <LightbulbIcon sx={{ fontSize: 30, color: "white" }} />,
     title: "Innovation",
     description:
-      "Harnessing the power of cutting-edge technology to transform digital payments and set new industry benchmarks.",
+      "In the world of software, standing still means falling behind. That's why we live at the cutting edge.",
   },
   {
     icon: <VerifiedUserIcon sx={{ fontSize: 30, color: "white" }} />,
     title: "Trust",
     description:
-      "Every transaction is backed by our commitment to reliability, transparency, and long-term trust.",
+      "  We don’t just write code — we build confidence in every project we deliver.",
   },
   {
     icon: <PeopleIcon sx={{ fontSize: 30, color: "white" }} />,
     title: "Customer Focus",
     description:
-      "We design every solution with our users in mind, ensuring seamless, hassle-free payment experiences.",
+      "We turn your vision into high-performance software that gives your business a real edge.",
   },
   {
     icon: <SecurityIcon sx={{ fontSize: 30, color: "white" }} />,
     title: "Security",
     description:
-      "With advanced encryption and robust safeguards, your transactions remain fully protected at all times.",
+      "We embed strong security throughout the SDLC to protect your data and IP.",
   },
 ];
 
@@ -58,13 +58,10 @@ const CoreValues = () => {
               Our Core Values
             </Typography>
           </motion.div>
-          <motion.div
-            animate={{x: [-900, 0] }} 
-            transition={{duration: 1.5,}}
-          >
-          <Typography variant="subtitle1" color="text.secondary">
-            The guiding principles behind everything we do
-          </Typography>
+          <motion.div animate={{ x: [-900, 0] }} transition={{ duration: 1.5 }}>
+            <Typography variant="subtitle1" color="text.secondary">
+              The guiding principles behind everything we do
+            </Typography>
           </motion.div>
         </Box>
 
