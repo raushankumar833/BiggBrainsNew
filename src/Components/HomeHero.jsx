@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
 import { Box, Grid, Typography, Button, Stack } from "@mui/material";
-import DownloadIcon from "@mui/icons-material/Download";
-import FlashOnIcon from "@mui/icons-material/FlashOn";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 
 export default function HomeHero() {
 const leftY = useMotionValue(0);
@@ -106,7 +107,7 @@ useEffect(() => {
           >
             <Button
               variant="contained"
-              startIcon={<DownloadIcon />}
+              endIcon={<ArrowForwardIcon />}
               sx={{
                 background: "linear-gradient(135deg, #1a1333, #0c345f)",
                 textTransform: "uppercase",
@@ -119,12 +120,12 @@ useEffect(() => {
                 width: { xs: "100%", sm: "auto" }, // ✅ FIX
               }}
             >
-              Download App
+              Get To Know Us
             </Button>
 
             <Button
               variant="outlined"
-              startIcon={<FlashOnIcon />}
+              startIcon={<MiscellaneousServicesIcon />}
               sx={{
                 border: "1px solid #0c345f",
                 color: "#0c345f",
@@ -136,7 +137,7 @@ useEffect(() => {
                 width: { xs: "100%", sm: "auto" }, // ✅ FIX
               }}
             >
-              Get Started
+              Explore Services
             </Button>
           </Stack>
         </Grid>
