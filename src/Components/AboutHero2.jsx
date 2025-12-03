@@ -127,7 +127,8 @@ const AboutHero2 = () => {
           sx={{
             mb: 7,
             color: "#555770",
-            lineHeight: 1.7,
+            lineHeight: 1.1,
+            textAlign: "justify",
             maxWidth: 700,
             fontSize: { xs: "1.1rem", md: "1.25rem" },
             fontWeight: 500,

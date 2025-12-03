@@ -207,6 +207,7 @@ export default function OurTeam() {
                 sx={{
                   flex: "0 0 280px",
                   p: 4,
+                  mt: 4,
                   borderRadius: 5,
                   textAlign: "center",
                   background: "transparent",
