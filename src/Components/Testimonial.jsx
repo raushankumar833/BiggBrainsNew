@@ -110,7 +110,7 @@ const Testimonial = () => {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        py: { xs: 12, md: 16 },
+        py: { xs: 6, md: 10 },
         px: { xs: 4, md: 14 },
         bgcolor: "#fff5f8",
         gap: { xs: 6, md: 6 },
