@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { motion, useMotionValue, animate } from "framer-motion";
 import { Box, Grid, Typography, Button, Stack } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-import { motion, useMotionValue, animate } from "framer-motion";
 
+export default function HomeHero() {
 const leftY = useMotionValue(0);
 const rightY = useMotionValue(0);
 
@@ -29,7 +30,6 @@ useEffect(() => {
   };
 }, []);
 
-export default function HomeHero() {
   return (
     <Box
       sx={{
