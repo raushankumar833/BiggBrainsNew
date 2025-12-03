@@ -29,7 +29,7 @@ export default function Navbar() {
     { label: "About Us", path: "/about" },
     { label: "Our Services", path: "/services" },
     { label: "Contact Us", path: "/contact" },
-    { label: "Join BiggBrains", path: "/join-us" }
+    { label: "Join BiggBrains", path: "/join-us" },
   ];
 
   const toggleDrawer = (open) => (event) => {
@@ -50,9 +50,9 @@ export default function Navbar() {
   const drawerContent = () => (
     <Box
       sx={{
-        width: 250,
+        width: { xs: "80vw", sm: 300 },
         height: "100%",
-        background: "linear-gradient(180deg, #5A0FC8, #480DC6)",
+        background: "#7C2EE5",
         color: "white",
       }}
       role="presentation"
@@ -66,21 +66,16 @@ export default function Navbar() {
           justifyContent: "space-between",
           alignItems: "center",
           p: 2,
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          borderBottom: "1px solid rgba(255,255,255,0.2)",
         }}
       >
         <Box
           component="img"
-          src="/src/assets/logop2p.png"
+          src="/src/assets/BiggBrainsLogo.svg"
           alt="logo"
-          sx={{
-            height: 35,
-          }}
+          sx={{ height: 66, ml:1 }}
         />
-        <IconButton
-          onClick={toggleDrawer(false)}
-          sx={{ color: "white" }}
-        >
+        <IconButton onClick={toggleDrawer(false)} sx={{ color: "white" }}>
           <CloseIcon />
         </IconButton>
       </Box>
@@ -93,9 +88,7 @@ export default function Navbar() {
             onClick={() => handleNavigation(item.path)}
             sx={{
               cursor: "pointer",
-              "&:hover": {
-                backgroundColor: "rgba(255,255,255,0.1)",
-              },
+              "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" },
             }}
           >
             <ListItemText
@@ -111,18 +104,19 @@ export default function Navbar() {
         ))}
       </List>
 
-      {/* Login Button in Drawer */}
+      {/* Login Button */}
       <Box sx={{ p: 2, mt: 2 }}>
         <Button
           fullWidth
           variant="contained"
           sx={{
-            backgroundColor: "#7C2EE5",
+            backgroundColor: "#ffffff",
+            color: "#7C2EE5",
             borderRadius: 2,
             textTransform: "none",
             fontWeight: 600,
             py: 1,
-            "&:hover": { backgroundColor: "#6925c7" },
+            "&:hover": { backgroundColor: "#f2e6ff" },
           }}
           onClick={() => handleNavigation("/login")}
         >
@@ -136,21 +130,21 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       sx={{
-        background: "linear-gradient(90deg, #5A0FC8, #480DC6)",
-        py: 1,
+        background: "#ffffff",
+        py: { xs: 0.5, md: 1 },
       }}
-      elevation={0}
+      elevation={1}
     >
       <Toolbar>
         {/* Logo */}
         <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Box
             component="img"
-            src="/src/assets/logop2p.png"
+            src="/src/assets/BiggBrainsLogo.svg"
             alt="logo"
             sx={{
-              height: 40,
-              mr: 1,
+              height: { xs: 50, sm: 55, md: 75 },
+              ml: { xs: 1.6, md: 5 },
               cursor: "pointer",
             }}
             onClick={() => navigate("/")}
@@ -160,22 +154,21 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <Stack
           direction="row"
-          spacing={4}
+          spacing={{ md: 3, lg: 4 }}
           sx={{
             alignItems: "center",
-            mr: 3,
             display: { xs: "none", md: "flex" },
           }}
         >
           {navigationItems.map((item) => (
             <Typography
               key={item.label}
-              variant="body1"
               sx={{
-                color: "white",
+                color: "#000",
                 cursor: "pointer",
                 fontWeight: 500,
-                "&:hover": { opacity: 0.8 },
+                "&:hover": { opacity: 0.7 },
+                fontSize: { md: "0.95rem", lg: "1rem" },
               }}
               onClick={() => navigate(item.path)}
             >
@@ -184,31 +177,34 @@ export default function Navbar() {
           ))}
         </Stack>
 
-        {/* Desktop Login Button */}
+        {/* Desktop Button */}
         <Button
           variant="contained"
           sx={{
             backgroundColor: "#7C2EE5",
             borderRadius: 2,
             textTransform: "none",
+            px: { md: 2.5, lg: 3 },
+            py: 1,
+            ml: 3,
             fontWeight: 600,
             display: { xs: "none", md: "block" },
             "&:hover": { backgroundColor: "#6925c7" },
           }}
           onClick={() => navigate("/login")}
         >
-          Login Now
+          Get Portfolio
         </Button>
 
         {/* Mobile Menu Icon */}
         <IconButton
           sx={{
             display: { xs: "flex", md: "none" },
-            color: "white",
+            color: "#7C2EE5",
           }}
           onClick={toggleDrawer(true)}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: 36 }} />
         </IconButton>
       </Toolbar>
 
