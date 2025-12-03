@@ -126,7 +126,7 @@ const Contact = () => {
       <Container maxWidth="lg" sx={{ py: { xs: 3, sm: 5, md: 8 } }}>
         <Grid container spacing={{ xs: 3, md: 5 }}>
           {/* ================= LEFT CARDS (40% width) ================= */}
-          <Grid item xs={12} md={4.8}>
+          <Grid item xs={12} sm={12} md={6}>
             <Stack spacing={{ xs: 3, md: 4 }}>
               {/* Office Card */}
               <Card
@@ -237,7 +237,7 @@ const Contact = () => {
               {/* Contact Card */}
               <Card
                 sx={{
-                  p: { xs: 3, sm: 3.5, md: 4 },
+                  p: { xs: 3, sm: 4, md: 4 },
                   background: "linear-gradient(145deg, #ffffff, #f8fafc)",
                   borderRadius: { xs: "20px", md: "24px" },
                   border: "2px solid rgba(29, 45, 70, 0.08)",
@@ -532,7 +532,7 @@ const Contact = () => {
           </Grid>
 
           {/* ================= RIGHT FORM (60% width) ================= */}
-          <Grid item xs={12} md={7.2}>
+            <Grid item xs={12} sm={12} md={6}>
             <Paper
               elevation={0}
               sx={{
