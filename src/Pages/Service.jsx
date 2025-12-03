@@ -94,12 +94,13 @@ const Service = () => {
           spacing={4}
           justifyContent="center"
           alignItems="stretch"
+          sx={{ mb: 6 }}
         >
           {whatWeDo.map((value, index) => (
             <Grid
               item
               xs={12}
-              sm={4}
+              sm={6}
               md={4}
               key={index}
               display="flex"
@@ -111,52 +112,66 @@ const Service = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.07 }}
-                style={{ width: "100%", maxWidth: 360 }} // ✅ same width
+                whileHover={{ scale: 1.05 }}
+                style={{ width: "100%", maxWidth: 360 }}
               >
                 <Card
                   sx={{
                     width: "100%",
-                    aspectRatio: "1 / 1", // ✅ SQUARE
+                    aspectRatio: "1 / 1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     textAlign: "center",
-                    p: 3,
-                    borderRadius: "24px",
-                    background: "rgba(255,255,255,0.08)",
-                    backdropFilter: "blur(14px)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    transition: "0.3s",
+                    p: 4,
+                    borderRadius: "32px",
+                    background: "rgba(255,255,255,0.05)",
+                    backdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+                    transition: "all 0.4s ease",
+                    cursor: "pointer",
                     "&:hover": {
-                      background: "rgba(255,255,255,0.14)",
-                      transform: "translateY(-8px)",
+                      background: "rgba(255,255,255,0.08)",
+                      transform: "translateY(-12px) scale(1.05)",
+                      boxShadow: "0 16px 32px rgba(0,0,0,0.2)",
                     },
                   }}
                 >
                   <Box>
-                    {/* ICON */}
-                    <Box
-                      sx={{
-                        width: 70,
-                        height: 70,
-                        borderRadius: "50%",
-                        mx: "auto",
-                        mb: 3,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background:
-                          "linear-gradient(135deg, #FB923C 20%, #EC4899 100%)",
+                    {/* FLOATING ICON */}
+                    <motion.div
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut",
                       }}
                     >
-                      {value.icon}
-                    </Box>
+                      <Box
+                        sx={{
+                          width: 80,
+                          height: 80,
+                          borderRadius: "50%",
+                          mx: "auto",
+                          mb: 3,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background:
+                            "linear-gradient(135deg, #FF7E5F 0%, #FEB47B 100%)",
+                          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                        }}
+                      >
+                        {value.icon}
+                      </Box>
+                    </motion.div>
 
                     <Typography
                       variant="h6"
-                      fontWeight="bold"
-                      sx={{ color: "#111111", mb: 2 }}
+                      fontWeight={700}
+                      sx={{ color: "#111111", mb: 1.5 }}
                     >
                       {value.title}
                     </Typography>
@@ -164,8 +179,9 @@ const Service = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: "#111111",
-                        px: 1,
+                        color: "#555555",
+                        px: 2,
+                        lineHeight: 1.6,
                       }}
                     >
                       {value.description}

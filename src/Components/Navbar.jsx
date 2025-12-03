@@ -17,6 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -47,93 +48,106 @@ export default function Navbar() {
     setDrawerOpen(false);
   };
 
-  const drawerContent = () => (
-    <Box
-      sx={{
-        width: { xs: "80vw", sm: 300 },
-        height: "100%",
-        background: "#7C2EE5",
-        color: "white",
-      }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      {/* Drawer Header */}
+  const drawerContent = () => {
+    const location = useLocation(); // Get current path
+
+    return (
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          p: 2,
-          borderBottom: "1px solid rgba(255,255,255,0.2)",
+          width: { xs: "80vw", sm: 300 },
+          height: "100%",
+          background: "#fcf9ff",
+          color: "white",
         }}
+        role="presentation"
+        onClick={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
       >
+        {/* Drawer Header */}
         <Box
-          component="img"
-          src="/src/assets/BiggBrainsLogo.svg"
-          alt="logo"
-          sx={{ height: 66, ml: 1 }}
-        />
-        <IconButton onClick={toggleDrawer(false)} sx={{ color: "white" }}>
-          <CloseIcon />
-        </IconButton>
-      </Box>
-
-      {/* Navigation Items */}
-      <List sx={{ mt: 2 }}>
-        {navigationItems.map((item) => (
-          <ListItem
-            key={item.label}
-            onClick={() => handleNavigation(item.path)}
-            sx={{
-              cursor: "pointer",
-              "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" },
-            }}
-          >
-            <ListItemText
-              primary={item.label}
-              sx={{
-                "& .MuiListItemText-primary": {
-                  color: "white",
-                  fontWeight: 500,
-                },
-              }}
-            />
-          </ListItem>
-        ))}
-      </List>
-
-      {/* Login Button */}
-      <Box sx={{ p: 2, mt: 2 }}>
-        <Button
-          fullWidth
-          variant="contained"
           sx={{
-            backgroundColor: "#ffffff",
-            color: "#7C2EE5",
-            borderRadius: 2,
-            textTransform: "none",
-            fontWeight: 600,
-            py: 1,
-            "&:hover": { backgroundColor: "#f2e6ff" },
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            p: 2,
+            borderBottom: "1px solid rgba(255,255,255,0.2)",
           }}
-          onClick={() => handleNavigation("/login")}
         >
-          Login Now
-        </Button>
+          <Box
+            component="img"
+            src="/src/assets/BiggBrainsLogo.svg"
+            alt="logo"
+            sx={{ height: 66, ml: 1 }}
+          />
+          <IconButton onClick={toggleDrawer(false)} sx={{ color: "black" }}>
+            <CloseIcon />
+          </IconButton>
+        </Box>
+
+        {/* Navigation Items */}
+        <List sx={{ mt: 2 }}>
+          {navigationItems.map((item) => {
+            const isActive = location.pathname === item.path; 
+            return (
+              <ListItem
+                key={item.label}
+                onClick={() => handleNavigation(item.path)}
+                sx={{
+                  cursor: "pointer",
+                  backgroundColor: isActive ? "#cce4ff" : "transparent", 
+                  borderRadius: isActive ? 4 : 0,
+                  "&:hover": {
+                    backgroundColor: isActive ? "#cce4ff" : "#e8f2fc",
+                    borderRadius: isActive ? 4 : 4,
+                  },
+                }}
+              >
+                <ListItemText
+                  primary={item.label}
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      color: isActive ? "#003366" : "black", 
+                      fontWeight: 500,
+                    },
+                  }}
+                />
+              </ListItem>
+            );
+          })}
+        </List>
+
+        {/* Login Button */}
+        <Box sx={{ p: 2, mt: 2 }}>
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{
+              backgroundColor: "#0c3b78",
+              color: "#fff",
+              borderRadius: 2,
+              textTransform: "none",
+              fontWeight: 600,
+              py: 1,
+              "&:hover": { backgroundColor: "#072d5e" },
+            }}
+            onClick={() => handleNavigation("/login")}
+          >
+            Login Now
+          </Button>
+        </Box>
       </Box>
-    </Box>
-  );
+    );
+  };
 
   return (
     <AppBar
       position="fixed"
       sx={{
-        background: "#ffffff",
+        background: "rgba(255,255,255,0.8)", 
         py: { xs: 0.5, md: 1 },
+        backdropFilter: "blur(5px)",
       }}
-      elevation={1}
+      elevation={0} 
     >
       <Toolbar>
         {/* Logo */}
@@ -210,7 +224,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer
-        anchor="right"
+        anchor="left"
         open={drawerOpen}
         onClose={toggleDrawer(false)}
         sx={{
