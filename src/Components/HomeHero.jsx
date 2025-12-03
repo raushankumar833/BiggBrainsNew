@@ -11,17 +11,16 @@ export default function HomeHero() {
         position: "relative",
         bgcolor: "#fdfdfd",
         maxWidth: "100%",
-        height: { xs: "90vh", md: "100vh" },
-        mt: { xs: 25, md: 1 },
+        height: { xs: "auto", sm: "90vh", md: "100vh" }, // ✅ FIX
+        mt: { xs: 15, sm: 20, md: 1 }, // ✅ FIX
+        pb: { xs: 10, md: 0 }, // ✅ FIX
       }}
     >
       <Grid
         container
         spacing={{ xs: 3, md: 1 }}
-        display={"flex"}
         justifyContent="flex-start"
         sx={{ maxWidth: "1200px", mx: "auto", px: 2 }}
-        // xs={{maxHeight:"100vh",}}
       >
         {/* Left Side (Text) */}
         <Grid
@@ -33,15 +32,16 @@ export default function HomeHero() {
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
-            mt: { xs: 6, md: 23 },
-            ml: { md: 4 },
+            mt: { xs: 4, sm: 8, md: 23 }, // ✅ FIX
+            ml: { xs : 0, md: 4 },
             px: { xs: 1, md: 0 },
+            zIndex: 2,
           }}
         >
           <Typography
             variant="h3"
             sx={{
-              fontSize: { xs: "1rem", md: "3.4rem" },
+              fontSize: { xs: "1.5rem", sm: "2.4rem", md: "3.4rem" }, // ✅ FIX
               fontWeight: 900,
               color: "#2e1a63",
               fontFamily: "Poppins, serif",
@@ -63,8 +63,8 @@ export default function HomeHero() {
             sx={{
               fontWeight: 500,
               mb: 4,
-              maxWidth: 520,
-              fontSize: { xs: "1rem", md: "1rem" },
+              maxWidth: {xs:240, md: 520},
+              fontSize: { xs: "0.75rem", md: "1rem" }, // ✅ FIX
               color: "#5f5f78",
               lineHeight: 1.7,
             }}
@@ -74,25 +74,24 @@ export default function HomeHero() {
             applications that grow modern businesses.
           </Typography>
 
-          <Stack direction="row" spacing={2.5}>
+          <Stack
+            direction={{ xs: "column", sm: "row" }} // ✅ FIX
+            spacing={2.5}
+            width="100%"
+          >
             <Button
               variant="contained"
               startIcon={<DownloadIcon />}
               sx={{
                 background: "linear-gradient(135deg, #1a1333, #3a1d6a)",
                 textTransform: "uppercase",
-                px: 4,
+                px: { xs: 2.5, md: 4 }, // ✅ FIX
                 py: 1.2,
                 fontWeight: 700,
                 letterSpacing: "0.05em",
                 borderRadius: "14px",
                 boxShadow: "0 12px 25px rgba(26, 19, 51, 0.25)",
-                transition: "0.3s ease",
-                "&:hover": {
-                  background: "linear-gradient(135deg, #2d1f55, #523094)",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 15px 28px rgba(26, 19, 51, 0.35)",
-                },
+                width: { xs: "100%", sm: "auto" }, // ✅ FIX
               }}
             >
               Download App
@@ -104,18 +103,12 @@ export default function HomeHero() {
               sx={{
                 border: "2px solid #1a1333",
                 color: "#1a1333",
-                px: 4,
-                py: 1.2,
+                px: { xs: 0.5, md: 4 }, // ✅ FIX
+                py: { xs: 0.5, md: 1.2 },
                 fontWeight: 700,
                 borderRadius: "14px",
                 letterSpacing: "0.05em",
-                transition: "0.3s ease",
-                "&:hover": {
-                  backgroundColor: "rgba(26,19,51,0.05)",
-                  borderColor: "#2d1f55",
-                  color: "#2d1f55",
-                  transform: "translateY(-2px)",
-                },
+                width: { xs: "100%", sm: "auto" }, // ✅ FIX
               }}
             >
               Get Started
@@ -130,17 +123,14 @@ export default function HomeHero() {
           md={6}
           sx={{
             position: "absolute",
-            right: { xs: "-40px", md: "9px" },
-            top: { xs: "40%", md: "50%" },
+            right: { xs: "0px", md: "9px" }, // ✅ FIX
+            top: { xs: "40%", sm: "55%", md: "50%" }, // ✅ FIX
             transform: "translateY(-50%)",
             display: "flex",
             justifyContent: "space-between",
-            gap: 1.3,
-            opacity: {
-              xs: 0.1,
-              sm: 0.2,
-              md: 1,
-            },
+            gap: { xs: 0.5, md: 1.3 }, // ✅ FIX
+            opacity: { xs: 0.15, sm: 0.25, md: 1 }, // ✅ FIX
+            zIndex: 1,
           }}
         >
           {/* Left Image Column */}
@@ -149,12 +139,12 @@ export default function HomeHero() {
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: "100vh",
+              height: { xs: "60vh", md: "100vh" }, // ✅ FIX (LG UNCHANGED)
             }}
           >
             <motion.div
               style={{ display: "flex", flexDirection: "column" }}
-              animate={{ y: ["0%","-10%"] }}
+              animate={{ y: ["0%", "-10%"] }}
               transition={{
                 repeat: Infinity,
                 duration: 31,
@@ -183,7 +173,7 @@ export default function HomeHero() {
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: "100vh",
+              height: { xs: "60vh", md: "100vh" }, // ✅ FIX
             }}
           >
             <motion.div
@@ -215,3 +205,4 @@ export default function HomeHero() {
     </Box>
   );
 }
+

@@ -11,50 +11,66 @@ const WorkHistory = () => {
     >
       {/* Section Heading */}
       <Typography
-        variant="h3"
         sx={{
           textAlign: "left",
           fontWeight: 900,
-          mb: { xs: 4, md: 6 },
           color: "#2e1a63",
-          letterSpacing: "0.01em",
           fontFamily: "'Montserrat', sans-serif",
-          pl: { xs: 0, md: 2 },
+
+          /* Responsive font size */
+          fontSize: {
+            xs: "1.8rem",
+            sm: "2.2rem",
+            md: "2.8rem",
+            lg: "3.2rem",
+          },
+
+          /* Responsive spacing */
+          mb: {
+            xs: 3,
+            sm: 4,
+            md: 5,
+            lg: 6,
+          },
+
+          /* Optional left padding for large screens */
+          pl: {
+            xs: 0,
+            md: 1,
+          },
         }}
       >
         Our Work History
       </Typography>
-
       {/* Image section */}
-      <Grid
-        container
-        spacing={{ xs: 3, md: 4 }}
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Grid
-          item
-          xs={12}
-          md={10}
-          lg={8}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+      <Grid container justifyContent="flex-start">
+        <Grid item xs={12} md={10} lg={8}>
           <Box
             component="img"
             src="/src/assets/work-history1.png"
             alt="Work History"
             sx={{
-              width: { xs: "100%" },
-              maxWidth: "md",
+              width: {
+                xs: "100%",
+              },
+
               height: "auto",
               objectFit: "contain",
-              mx: "auto",
-              display: "block",
-              transform: "translateY(-6rem)", ml: { xs: 0, md: 15 },
+
+              /* Responsive vertical position */
+              transform: {
+                xs: "translateY(-2rem)",
+                sm: "translateY(-3rem)",
+                md: "translateY(-4rem)",
+              },
+
+              /* Responsive left movement */
+              ml: {
+                xs: 0,
+                sm: 2,
+                md: 6,
+                lg: 15,
+              },
             }}
           />
         </Grid>

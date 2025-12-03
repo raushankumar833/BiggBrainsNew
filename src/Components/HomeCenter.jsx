@@ -5,104 +5,177 @@ import {
   Grid,
   Typography,
   Button,
+  Card,
+  CardContent,
   Divider,
   Stack,
 } from "@mui/material";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import WebIcon from "@mui/icons-material/Web";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
+import { motion } from "framer-motion";
 
-export default function HomeCenter() {
+const whatWeDo = [
+  {
+    icon: <WebIcon sx={{ fontSize: 34, color: "#fff" }} />,
+    title: "Web Application",
+    description:
+      "Harnessing the power of cutting-edge technology to transform digital payments and set new industry benchmarks.",
+  },
+  {
+    icon: <PhoneIphoneIcon sx={{ fontSize: 34, color: "#fff" }} />,
+    title: "Application Development",
+    description:
+      "Every transaction is backed by our commitment to reliability, transparency, and long-term trust.",
+  },
+  {
+    icon: <DeveloperModeIcon sx={{ fontSize: 34, color: "#fff" }} />,
+    title: "Hybrid Application",
+    description:
+      "We design every solution with our users in mind, ensuring seamless, hassle-free payment experiences.",
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.25, duration: 0.7 },
+  }),
+};
+
+const HomeCenter = () => {
   return (
     <Box
       sx={{
-        py: 10,
-        px: 10,
-        bgcolor: "#6dbceaff", // gradient background
+        py: { xs: 8, md: 12 },
+        background: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
+        {/* HEADING */}
+        <Box textAlign="center" mb={{ xs: 6, md: 8 }}>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              sx={{
+                color: "white",
+                mb: 1,
+                fontSize: { xs: "1.6rem", md: "2.3rem" },
+              }}
+            >
+              What We Work
+            </Typography>
+          </motion.div>
+
+          <Typography
+            variant="subtitle1"
+            sx={{
+              color: "rgba(255,255,255,0.75)",
+              maxWidth: 500,
+              mx: "auto",
+            }}
+          >
+            The guiding principles behind everything we do
+          </Typography>
+        </Box>
+
+        {/* ✅ ONLY 3 COLUMNS */}
         <Grid
           container
           spacing={4}
-          display='flex'
-          alignItems="center"
-          justifyContent="flex-start"
-          maxWidth="400"
+          justifyContent="center"
+          alignItems="stretch"
         >
-          {/* Left Side */}
-          <Grid item xs={12} md={6} lg={6}>
-            <Typography
-              variant="subtitle1"
-              sx={{ color: "#1a1a66", fontWeight: 600, mb: 1 ,m:{xs:-5, md:1}}}
+          {whatWeDo.map((value, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              md={4}
+              key={index}
+              display="flex"
+              justifyContent="center"
             >
-              Simplify Payments, Maximize Growth
-            </Typography>
-
-            <Typography
-              variant="h3"
-              sx={{ fontWeight: 800, color: "#1a1a66", mb: 2 ,m:{xs:5, md:1}}}
-            >
-              BiggBrains
-            </Typography>
-
-            <Typography
-              variant="subtitle2"
-              sx={{ color: "text.primary", fontWeight: 600, mb: 2 ,m:{xs:1, md:1}}}
-            >
-              Combined solutions for all services
-            </Typography>
-
-            <Typography
-              variant="body1"
-              sx={{ color: "text.secondary", mb: 4, maxWidth: {xs:"100%",md:"40%"} }}
-            >
-              Experience financial empowerment in one unified platform – where
-              convenience meets comprehensive solutions, redefining your
-              financial journey effortlessly.
-            </Typography>
-
-            <Button
-              variant="contained"
-              sx={{
-                background:
-                  "linear-gradient(90deg, #f2994a 0%, #9b51e0 100%)",
-                px: 4,
-                py: 1.5,
-                fontWeight: 600,
-                borderRadius: 2,
-                textTransform: "none",
-                "&:hover": {
-                  background:
-                    "linear-gradient(90deg, #e67e22 0%, #7e3ccf 100%)",
-                },
-              }}
-            >
-              Try P2PAE →
-            </Button>
-          </Grid>
-
-          {/* Right Side */}
-          <Grid item xs={12} md={5} lg={6}>
-            <Stack direction="row" display='flex' alignItems="flex-end">
-              <FormatQuoteIcon
-                sx={{
-                  fontSize: 40,
-                  color: "#673ab7",
-                  mb: {xs:27,md:3.5},
-                  ml:{xs:-5,md:1}
-                }}
-              />
-              <Typography
-                variant="h6"
-                sx={{ color: "#1a1a66", fontWeight: 500, lineHeight: 1.6 }}
+              <motion.div
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.07 }}
+                style={{ width: "100%", maxWidth: 360 }} // ✅ same width
               >
-                Whether you're a local retailer, or a thriving enterprise, our
-                platform is tailored to elevate your business operations – a
-                seamless solution for every shop size.
-              </Typography>
-            </Stack>
-          </Grid>
+                <Card
+                  sx={{
+                    width: "100%",
+                    aspectRatio: "1 / 1", // ✅ SQUARE
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    p: 3,
+                    borderRadius: "24px",
+                    background: "rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(14px)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    transition: "0.3s",
+                    "&:hover": {
+                      background: "rgba(255,255,255,0.14)",
+                      transform: "translateY(-8px)",
+                    },
+                  }}
+                >
+                  <Box>
+                    {/* ICON */}
+                    <Box
+                      sx={{
+                        width: 70,
+                        height: 70,
+                        borderRadius: "50%",
+                        mx: "auto",
+                        mb: 3,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      }}
+                    >
+                      {value.icon}
+                    </Box>
+
+                    <Typography
+                      variant="h6"
+                      fontWeight="bold"
+                      sx={{ color: "#fff", mb: 2 }}
+                    >
+                      {value.title}
+                    </Typography>
+
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "rgba(255,255,255,0.75)",
+                        px: 1,
+                      }}
+                    >
+                      {value.description}
+                    </Typography>
+                  </Box>
+                </Card>
+              </motion.div>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Box>
   );
-}
+};
+
+export default HomeCenter;

@@ -220,7 +220,7 @@ const Footer = () => {
                   '&:hover': { color: '#070a72ff' },
                 }}
               >
-                Support@BiggBrains.com
+                tms@biggbrains.com
               </Link>
               <Typography
                 sx={{
@@ -228,7 +228,7 @@ const Footer = () => {
                   color: '#666',
                 }}
               >
-                011-47537321 ,7428985999
+                7011256694
               </Typography>
               <Typography
                 sx={{
@@ -237,7 +237,7 @@ const Footer = () => {
                   lineHeight: 1.6,
                 }}
               >
-                PVT No.-2, B-1, KH No.900/289Ground Floor, Shalimar Village, Delhi, North West Delhi-110088, Delhi
+                Plot No. 8 Pocket, 6, Sector 22, Rohini, Delhi, 110086
               </Typography>
             </Box>
           </Box>
