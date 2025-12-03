@@ -155,7 +155,7 @@ const Contact = () => {
               <Box
                 className="icon-container"
                 sx={{
-                  p: 1.5,
+                  // p: 1.5,
                   borderRadius: "14px",
                   background: "linear-gradient(135deg, #1d2d46, #2d3e5d)",
                   display: "flex",
@@ -236,7 +236,7 @@ const Contact = () => {
               <Box
                 className="icon-container"
                 sx={{
-                  p: 1.5,
+                   p: 1,
                   borderRadius: "14px",
                   background: "linear-gradient(135deg, #1d2d46, #2d3e5d)",
                   display: "flex",
@@ -836,7 +836,201 @@ const Contact = () => {
     </Grid>
   </Grid>
 </Container>
+ <Stack 
+      direction={{ xs: 'column', md: 'row' }}
+      alignItems="center"
+      justifyContent="space-between"
+      spacing={{ xs: 3, md: 6 }}
+      sx={{
+        p: { xs: 3, sm: 4, md: 5 },
+        background: 'linear-gradient(145deg, #ffffff, #f8fafc)',
+        borderRadius: { xs: '20px', md: '24px' },
+        border: '2px solid rgba(29, 45, 70, 0.08)',
+        boxShadow: '0 15px 35px rgba(0, 0, 0, 0.08)',
+        position: 'relative',
+        overflow: 'hidden',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: `
+            radial-gradient(circle at 20% 80%, rgba(29, 45, 70, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(61, 80, 112, 0.05) 0%, transparent 50%)
+          `,
+          zIndex: 0,
+        },
+      }}
+    >
+      {/* Rocket Image Container */}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: { xs: '100%', md: '40%' },
+          mb: { xs: 2, md: 0 },
+        }}
+      >
+        <Box
+          sx={{
+            transform: 'translateY(-0.648212px) translateZ(0px)',
+            transition: 'transform 0.3s ease',
+            '&:hover': {
+              transform: 'translateY(-5px) translateZ(0px)',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              display: 'inline-block',
+              color: 'transparent',
+            }}
+          >
+            <Box
+              component="img"
+              alt="rocket"
+              src="src/assets/rocket.png"
+              sx={{
+                width: { xs: '200px', sm: '250px', md: '280px' },
+                height: 'auto',
+                maxWidth: '100%',
+                display: 'block',
+                filter: 'drop-shadow(0 10px 20px rgba(29, 45, 70, 0.15))',
+              }}
+            />
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Content Container */}
+      <Box
+        sx={{
+          flex: 1,
+          width: { xs: '100%', md: '60%' },
+          textAlign: { xs: 'center', md: 'left' },
+        }}
+      >
+        {/* Main Heading */}
+        <Typography
+          variant="h2"
+          sx={{
+            color: '#1d2d46',
+            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
+            fontWeight: 800,
+            lineHeight: 1.3,
+            mb: 2,
+            background: 'linear-gradient(135deg, #1d2d46 0%, #3d5070 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          Your queries and feedback
+          <br />
+          are important to us
+        </Typography>
+
+        {/* Subheading */}
+        <Typography
+          variant="h6"
+          sx={{
+            color: '#5a6c7d',
+            fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+            fontWeight: 400,
+            mb: { xs: 3, sm: 4 },
+          }}
+        >
+          we look forward to assisting you.
+        </Typography>
+          
+        {/* Buttons Container
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
+          justifyContent={{ xs: 'center', md: 'flex-start' }}
+          sx={{ mt: 3 }}
+        >
+          {/* Contact Us Button 
+          <Button
+            variant="contained"
+            size="large"
+            href="/contact-us"
+            rel="noopener"
+            sx={{
+              background: 'linear-gradient(135deg, #1d2d46 0%, #3d5070 100%)',
+              color: '#ffffff',
+              padding: { xs: '12px 24px', sm: '14px 32px' },
+              borderRadius: '12px',
+              fontWeight: 600,
+              fontSize: { xs: '0.95rem', sm: '1rem' },
+              textTransform: 'none',
+              minWidth: { xs: '100%', sm: '180px' },
+              boxShadow: '0 10px 30px rgba(29, 45, 70, 0.3)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              '&:hover': {
+                background: 'linear-gradient(135deg, #3d5070 0%, #1d2d46 100%)',
+                transform: 'translateY(-3px)',
+                boxShadow: '0 15px 35px rgba(29, 45, 70, 0.4)',
+              },
+              '&:active': {
+                transform: 'translateY(-1px)',
+                boxShadow: '0 5px 20px rgba(29, 45, 70, 0.3)',
+              },
+            }}
+          >
+            Contact us
+          </Button>
+
+          {/* Schedule Meeting Button 
+          <Button
+            variant="outlined"
+            size="large"
+            href="/schduleForm"
+            rel="noopener"
+            //  endIcon={<ArrowForwardIcon />}
+            sx={{
+              color: '#1d2d46',
+              borderColor: 'rgba(29, 45, 70, 0.3)',
+              borderWidth: '2px',
+              padding: { xs: '12px 24px', sm: '14px 32px' },
+              borderRadius: '12px',
+              fontWeight: 600,
+              fontSize: { xs: '0.95rem', sm: '1rem' },
+              textTransform: 'none',
+              minWidth: { xs: '100%', sm: '200px' },
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              '&:hover': {
+                borderColor: '#1d2d46',
+                backgroundColor: 'rgba(29, 45, 70, 0.05)',
+                transform: 'translateY(-3px)',
+                boxShadow: '0 10px 25px rgba(29, 45, 70, 0.1)',
+              },
+              '&:active': {
+                transform: 'translateY(-1px)',
+              },
+              '& a': {
+                color: 'inherit',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                height: '100%',
+              },
+            }}
+          >
+            <Box component="a" href="/schduleForm" className="link">
+              Schedule meeting
+            </Box>
+          </Button>
+        </Stack> */}
+      </Box>
+    </Stack>
     </Box>
+    
   );
 };
 
