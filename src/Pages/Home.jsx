@@ -14,7 +14,7 @@ function Home() {
   }, []);
   return (
     <>
-      <Homaero />
+      <HomeHero />
       <HomeCenter />
       {/* <HelpYou/> */}
       <CoreValues/>
