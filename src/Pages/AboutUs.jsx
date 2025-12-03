@@ -4,6 +4,7 @@ import AboutHero from "./AboutHero";
 import AboutHero2 from "./AboutHero2";
 import OurTeam from "./OurTeam";
 import Testimonial from "./Testimonial";
+import ConnectUs from "../Components/ConnectUs";
 
 
 
@@ -21,6 +22,9 @@ export default function AboutUs() {
 
       {/* Testimonial Section */}
       <Testimonial />
+
+      {/* Connect Us Section  */}
+      <ConnectUs/>
     </>
   );
 }
