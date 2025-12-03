@@ -6,6 +6,7 @@ import CoreValues from "../Components/CoreValues";
 import BusinessStats from "../Components/BusinessStats";
 import WorkHistory from "../Components/WorkHistory";
 import HeroSection from "../Components/HeroSection";
+import ConnectUs from "../Components/ConnectUs";
 
 function Home() {
   useEffect(() => {
@@ -15,11 +16,12 @@ function Home() {
     <>
       <HomeHero />
       <HomeCenter />
-      <HelpYou/>
+      {/* <HelpYou/> */}
       <CoreValues/>
       <BusinessStats/>
       <WorkHistory/>
-      <HeroSection/>
+      <ConnectUs/>
+      {/* <HeroSection/> */}
     </>
   );
 }
