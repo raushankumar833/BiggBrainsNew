@@ -6,13 +6,14 @@ import Contact from "./Pages/Contact";
 import AboutUs from "./Pages/AboutUs";
 import Service from "./Pages/Service";
 import Home from "./Pages/Home";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
     <>
       <Navbar/>
       <Routes>
-         <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
@@ -20,7 +21,7 @@ const App = () => {
         {/*<Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} /> */}
       </Routes>
-      {/* <Footer /> */}
+      <Footer/>
     </>
   );
 };
