@@ -28,7 +28,7 @@ const BusinessStats = () => {
               textAlign: { xs: "center", md: "left" },
             }}
           >
-            Made in India
+            Work in India
           </Typography>
           <motion.div
             initial={{ opacity: 0 }}
@@ -44,7 +44,7 @@ const BusinessStats = () => {
                 textAlign: { xs: "center", md: "left" },
               }}
             >
-              Made for Businesses
+              Made for Developer
             </Typography>
           </motion.div>
 
@@ -141,7 +141,7 @@ const BusinessStats = () => {
                 }}
               >
                 <img
-                  src="/src/assets/woman.jpg"
+                  src="/src/assets/CodingImage.jpeg"
                   alt="Illustration"
                   style={{ width: "100%", height: "auto" }}
                 />
@@ -177,11 +177,16 @@ const BusinessStats = () => {
               >
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: { xs: 14, sm: 16 } }}
+                  sx={{
+                    fontSize: { xs: 14, sm: 16 },
+                    fontStyle: "italic",
+                  }}
                 >
-                  “Since embracing our neo banking platform, our financial
-                  management has soared, witnessing an impressive 80% boost in
-                  productivity over the past year.”
+                  “We embed robust security protocols and continuous
+                  vulnerability checks throughout the entire Software
+                  Development Life Cycle (SDLC), ensuring your intellectual
+                  property and user data are guarded by the industry's best
+                  practices”
                 </Typography>
               </Paper>
             </motion.div>
