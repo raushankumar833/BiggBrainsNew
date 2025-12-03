@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Grid, Typography, Button, Stack } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, animate } from "framer-motion";
+
+const leftY = useMotionValue(0);
+const rightY = useMotionValue(0);
+
+const leftAnim = useRef(null);
+const rightAnim = useRef(null);
+
+useEffect(() => {
+  leftAnim.current = animate(leftY, ["0%", "-10%"], {
+    duration: 31,
+    repeat: Infinity,
+    ease: "linear",
+  });
+
+  rightAnim.current = animate(rightY, ["-10%", "0%"], {
+    duration: 31,
+    repeat: Infinity,
+    ease: "linear",
+  });
+
+  return () => {
+    leftAnim.current?.stop();
+    rightAnim.current?.stop();
+  };
+}, []);
 
 export default function HomeHero() {
   return (
@@ -33,7 +58,7 @@ export default function HomeHero() {
             justifyContent: "flex-start",
             alignItems: "flex-start",
             mt: { xs: 4, sm: 8, md: 23 }, // ✅ FIX
-            ml: { xs : 0, md: 4 },
+            ml: { xs: 0, md: 4 },
             px: { xs: 1, md: 0 },
             zIndex: 2,
           }}
@@ -63,7 +88,7 @@ export default function HomeHero() {
             sx={{
               fontWeight: 500,
               mb: 4,
-              maxWidth: {xs:240, md: 520},
+              maxWidth: { xs: 240, md: 520 },
               fontSize: { xs: "0.75rem", md: "1rem" }, // ✅ FIX
               color: "#5f5f78",
               lineHeight: 1.7,
@@ -143,13 +168,13 @@ export default function HomeHero() {
             }}
           >
             <motion.div
-              style={{ display: "flex", flexDirection: "column" }}
-              animate={{ y: ["0%", "-10%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 31,
-                ease: "linear",
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                y: leftY, // IMPORTANT
               }}
+              onMouseEnter={() => leftAnim.current?.pause()}
+              onMouseLeave={() => leftAnim.current?.play()}
             >
               {[...Array(10)].map((_, i) => (
                 <img
@@ -173,17 +198,17 @@ export default function HomeHero() {
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: { xs: "60vh", md: "100vh" }, // ✅ FIX
+              height: { xs: "60vh", md: "100vh" }, 
             }}
           >
             <motion.div
-              style={{ display: "flex", flexDirection: "column" }}
-              animate={{ y: ["-10%", "0%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 31,
-                ease: "linear",
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                y: rightY, 
               }}
+              onMouseEnter={() => rightAnim.current?.pause()}
+              onMouseLeave={() => rightAnim.current?.play()}
             >
               {[...Array(10)].map((_, i) => (
                 <img
@@ -205,4 +230,3 @@ export default function HomeHero() {
     </Box>
   );
 }
-
