@@ -70,7 +70,7 @@ const HomeCenter = () => {
                 fontSize: { xs: "1.6rem", md: "2.3rem" },
               }}
             >
-              What We Work
+              Work We Do
             </Typography>
           </motion.div>
 
