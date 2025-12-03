@@ -7,11 +7,13 @@ import AboutUs from "./Pages/AboutUs";
 import Service from "./Pages/Service";
 import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
   return (
     <>
       <Navbar/>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<AboutUs />} />

@@ -88,7 +88,7 @@ export default function OurTeam() {
     <Box
       sx={{
         position: "relative",
-        py: { xs: 10, md: 14 },
+        py: { xs: 5, md: 8 },
         px: { xs: 4, md: 14 },
         bgcolor: "#f4f6f9",
         textAlign: "center",

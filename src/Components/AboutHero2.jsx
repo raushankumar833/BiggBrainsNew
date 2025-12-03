@@ -41,7 +41,7 @@ const AboutHero2 = () => {
         flexDirection: { xs: "column", md: "row" },
         gap: { xs: 6, md: 10 },
         px: { xs: 4, md: 14 },
-        py: { xs: 10, md: 16 },
+        py: { xs: 5, md: 8 },
         bgcolor: "#fff",
         alignItems: "center",
         justifyContent: "center",

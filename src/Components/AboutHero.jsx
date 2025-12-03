@@ -50,7 +50,7 @@ const AboutHero = () => {
         <Typography
           variant="h1"
           sx={{
-            fontWeight: "900",
+            fontWeight: "700",
             fontSize: { xs: "2.8rem", md: "4rem" },
             letterSpacing: "0.1em",
             mt: { xs: "80px", md: "2px" },
@@ -67,7 +67,7 @@ const AboutHero = () => {
             mb: 5,
             fontWeight: 500,
             fontSize: { xs: "1.1rem", md: "1.3rem" },
-            lineHeight: 1.7,
+            lineHeight: 1.1,
             maxWidth: 520,
             color: "rgba(255,255,255,0.9)",
           }}
@@ -81,7 +81,7 @@ const AboutHero = () => {
           variant="contained"
           sx={{
             background: "linear-gradient(90deg, #1e90ff, #00aaff)",
-            padding: "15px 36px",
+            padding: "10px 25px",
             fontSize: "1.1rem",
             fontWeight: 700,
             borderRadius: "50px",

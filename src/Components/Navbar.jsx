@@ -174,21 +174,44 @@ export default function Navbar() {
             display: { xs: "none", md: "flex" },
           }}
         >
-          {navigationItems.map((item) => (
-            <Typography
-              key={item.label}
-              sx={{
-                color: "#000",
-                cursor: "pointer",
-                fontWeight: 500,
-                "&:hover": { opacity: 0.7 },
-                fontSize: { md: "0.95rem", lg: "1rem" },
-              }}
-              onClick={() => navigate(item.path)}
-            >
-              {item.label}
-            </Typography>
-          ))}
+          {navigationItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Box
+                key={item.label}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+                onClick={() => navigate(item.path)}
+              >
+                <Typography
+                  sx={{
+                    color: isActive ? "#105ec4" : "#000", // active blue, else black
+                    fontWeight: isActive ? 600 : 500,
+                    fontSize: { md: "0.95rem", lg: "1rem" },
+                    transition: "color 0.3s",
+                    "&:hover": { color: "#ed1874" },
+                  }}
+                >
+                  {item.label}
+                </Typography>
+                {isActive && (
+                  <Box
+                    sx={{
+                      width: "100%",
+                      height: 3,
+                      backgroundColor: "#ed1874", 
+                      borderRadius: 2,
+                      mt: 0.5,
+                    }}
+                  />
+                )}
+              </Box>
+            );
+          })}
         </Stack>
 
         {/* Desktop Button */}
