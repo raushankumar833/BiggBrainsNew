@@ -9,6 +9,9 @@ import Contact from "./Pages/Contact";
 import AboutUs from "./Pages/AboutUs";
 import Service from "./Pages/Service";
 import Home from "./Pages/Home";
+import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
+import Faqs from "./Pages/Faqs";
 import TermAndCondition from "./Pages/TermAndCondition";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import ScheduleForm from "./Pages/SchduleForm";
@@ -27,6 +30,10 @@ const App = () => {
         <Route path="/services" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/join-us" element={<JoinUs />} />
+        <Route path="/faqs" element={<Faqs/>} />
+        
+        {/*<Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignupPage />} /> */}
         <Route path="/terms-and-conditions" element={<TermAndCondition />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/scheduleForm" element={<ScheduleForm />} />
