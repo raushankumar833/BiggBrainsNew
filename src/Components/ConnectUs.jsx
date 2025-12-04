@@ -37,30 +37,30 @@ const ConnectUs = () => {
           <Grid container alignItems="center" justifyContent="center">
             {/* Left Image */}
             <Grid item xs={12} md={4} sx={{ maxWidth: 350 }}>
-              <motion.img
+              <Box
+                component={motion.img}
                 src="/src/assets/person.jpg"
                 alt="Financial Journey"
-                style={{
+                sx={{
                   width: "70%",
-                  borderRadius: "16px", // same as borderRadius={2}
-                  marginLeft: "20px", // ml: 5 (theme spacing → ~40px, adjust if needed)
-                  marginTop: "16px", // mt: 2
+                  borderRadius: "16px",
+                  ml: { xs: "42px", md: "20px" }, // responsive margin-left
+                  mt: "16px",
                 }}
-                animate={{ scale: [1, 1.1, 1] }} // zoom in & out
+                animate={{ scale: [1, 1.1, 1] }}
                 transition={{
-                  duration: 2, // animation runs for 2s
-                  repeat: Infinity, // infinite loop
-                  repeatDelay: 1, // 1s pause → total cycle = 3s
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 1,
                   ease: "easeInOut",
                 }}
               />
             </Grid>
-
             {/* Right Content */}
             <Grid item xs={12} md={7}>
               <Typography
                 variant="h5"
-                sx={{ fontWeight: "bold", color: "#1e1e4b", mb: 1, mt: 2 }}
+                sx={{ fontWeight: "bold", color: "#1e1e4b", mb: 1, mt: 2, textAlign: "center" }}
               >
                 Your queries and feedback are important to us
               </Typography>
