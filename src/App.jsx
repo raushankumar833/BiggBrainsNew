@@ -13,10 +13,12 @@ import TermAndCondition from "./Pages/TermAndCondition";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import ScheduleForm from "./Pages/SchduleForm";
 import Portfolio from "./Pages/Portfolio";
+import ScrollProgressBar from "./Pages/ScrollProgressBar";  
 
 const App = () => {
   return (
     <>
+      <ScrollProgressBar/>
       <Navbar/>
       <ScrollToTop />
       <Routes>
