@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
-
+ 
 const images = [
   "/src/assets/portfolio/1.png",
   "/src/assets/portfolio/2.png",
