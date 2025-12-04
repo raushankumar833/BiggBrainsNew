@@ -8,6 +8,8 @@ import Service from "./Pages/Service";
 import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
+import TermAndCondition from "./Pages/TermAndCondition";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/services" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/join-us" element={<JoinUs />} />
+        <Route path="/terms-and-conditions" element={<TermAndCondition />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         {/*<Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} /> */}
       </Routes>
