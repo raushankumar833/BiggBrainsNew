@@ -1,35 +1,37 @@
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
 import { Box, Grid, Typography, Button, Stack } from "@mui/material";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 
 export default function HomeHero() {
-const leftY = useMotionValue(0);
-const rightY = useMotionValue(0);
+  const leftY = useMotionValue(0);
+  const rightY = useMotionValue(0);
 
-const leftAnim = useRef(null);
-const rightAnim = useRef(null);
+  const leftAnim = useRef(null);
+  const rightAnim = useRef(null);
+  const navigate = useNavigate();
 
-useEffect(() => {
-  leftAnim.current = animate(leftY, ["0%", "-10%"], {
-    duration: 31,
-    repeat: Infinity,
-    ease: "linear",
-  });
+  useEffect(() => {
+    leftAnim.current = animate(leftY, ["0%", "-10%"], {
+      duration: 31,
+      repeat: Infinity,
+      ease: "linear",
+    });
 
-  rightAnim.current = animate(rightY, ["-10%", "0%"], {
-    duration: 31,
-    repeat: Infinity,
-    ease: "linear",
-  });
+    rightAnim.current = animate(rightY, ["-10%", "0%"], {
+      duration: 31,
+      repeat: Infinity,
+      ease: "linear",
+    });
 
-  return () => {
-    leftAnim.current?.stop();
-    rightAnim.current?.stop();
-  };
-}, []);
+    return () => {
+      leftAnim.current?.stop();
+      rightAnim.current?.stop();
+    };
+  }, []);
 
   return (
     <Box
@@ -106,6 +108,7 @@ useEffect(() => {
             width="100%"
           >
             <Button
+              onClick={() => navigate("/about")}
               variant="contained"
               endIcon={<ArrowForwardIcon />}
               sx={{
@@ -124,6 +127,7 @@ useEffect(() => {
             </Button>
 
             <Button
+              onClick={() => navigate("/services")}
               variant="outlined"
               startIcon={<MiscellaneousServicesIcon />}
               sx={{
@@ -199,14 +203,14 @@ useEffect(() => {
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: { xs: "60vh", md: "100vh" }, 
+              height: { xs: "60vh", md: "100vh" },
             }}
           >
             <motion.div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                y: rightY, 
+                y: rightY,
               }}
               onMouseEnter={() => rightAnim.current?.pause()}
               onMouseLeave={() => rightAnim.current?.play()}

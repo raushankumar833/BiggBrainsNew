@@ -32,7 +32,7 @@ const AboutHero = () => {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(90deg, rgba(63, 75, 88, 0.8) 40%, rgba(0, 0, 0, 0.6) 100%)",
+            "linear-gradient(90deg, rgba(63, 75, 88, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%)",
           zIndex: 0,
         },
       }}

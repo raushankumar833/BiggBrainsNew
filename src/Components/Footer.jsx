@@ -2,15 +2,17 @@ import { Box, Container, Typography, Link, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <Box
       component="footer"
       sx={{
         backgroundColor: "#f9fafb",
-        pt: 6,
-        pb: 4,
+        pt: 3,
+        pb: 2,
         position: "relative",
         overflow: "hidden",
       }}
@@ -111,39 +113,48 @@ const Footer = () => {
               BiggBrains
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-              <Link
-                href="#"
-                sx={{
-                  fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
-                  textDecoration: "none",
-                  "&:hover": { color: "#070a72ff" },
-                }}
-              >
-                About us
-              </Link>
-              <Link
-                href="#"
-                sx={{
-                  fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
-                  textDecoration: "none",
-                  "&:hover": { color: "#070a72ff" },
-                }}
-              >
-                Contact us
-              </Link>
-              <Link
-                href="#"
-                sx={{
-                  fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
-                  textDecoration: "none",
-                  "&:hover": { color: "#070a72ff" },
-                }}
-              >
-                FAQs
-              </Link>
+              <Box sx={{ width: "fit-content" }}>
+                <Link
+                  onClick={() => navigate("/about")}
+                  sx={{
+                    cursor: "pointer",
+                    fontSize: { xs: "13px", md: "14px" },
+                    color: "#444",
+                    textDecoration: "none",
+                    "&:hover": { color: "#070a72ff" },
+                  }}
+                >
+                  About us
+                </Link>
+              </Box>
+              <Box sx={{ width: "fit-content" }}>
+                <Link
+                  onClick={() => navigate("/contact")}
+                  sx={{
+                    cursor: "pointer",
+                    fontSize: { xs: "13px", md: "14px" },
+                    color: "#444",
+                    textDecoration: "none",
+                    "&:hover": { color: "#070a72ff" },
+                  }}
+                >
+                  Contact us
+                </Link>
+              </Box>
+              <Box sx={{ width: "fit-content" }}>
+                <Link
+                  onClick={() => navigate("/faqs")}
+                  sx={{
+                    cursor: "pointer",
+                    fontSize: { xs: "13px", md: "14px" },
+                    color: "#444",
+                    textDecoration: "none",
+                    "&:hover": { color: "#070a72ff" },
+                  }}
+                >
+                  FAQs
+                </Link>
+              </Box>
             </Box>
           </Box>
 
@@ -161,28 +172,34 @@ const Footer = () => {
               Legal
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-              <Link
-                href="#"
-                sx={{
-                  fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
-                  textDecoration: "none",
-                  "&:hover": { color: "#070a72ff" },
-                }}
-              >
-                Terms and Condition
-              </Link>
-              <Link
-                href="#"
-                sx={{
-                  fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
-                  textDecoration: "none",
-                  "&:hover": { color: "070a72ff" },
-                }}
-              >
-                Privacy Policy
-              </Link>
+              <Box sx={{ width: "fit-content" }}>
+                <Link
+                  onClick={() => navigate("/terms-and-conditions")}
+                  sx={{
+                    cursor: "pointer",
+                    fontSize: { xs: "13px", md: "14px" },
+                    color: "#444",
+                    textDecoration: "none",
+                    "&:hover": { color: "#070a72ff" },
+                  }}
+                >
+                  Terms and Condition
+                </Link>
+              </Box>
+              <Box sx={{ width: "fit-content" }}>
+                <Link
+                  onClick={() => navigate("/privacy-policy")}
+                  sx={{
+                    cursor: "pointer",
+                    fontSize: { xs: "13px", md: "14px" },
+                    color: "#444",
+                    textDecoration: "none",
+                    "&:hover": { color: "#070a72ff" },
+                  }}
+                >
+                  Privacy Policy
+                </Link>
+              </Box>
             </Box>
           </Box>
 
@@ -209,7 +226,7 @@ const Footer = () => {
                 href="mailto:Support@BiggBrains.com"
                 sx={{
                   fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
+                  color: "#444",
                   textDecoration: "none",
                   "&:hover": { color: "#070a72ff" },
                 }}
@@ -219,7 +236,7 @@ const Footer = () => {
               <Typography
                 sx={{
                   fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
+                  color: "#444",
                 }}
               >
                 011-49954822
@@ -227,7 +244,7 @@ const Footer = () => {
               <Typography
                 sx={{
                   fontSize: { xs: "13px", md: "14px" },
-                  color: "#666",
+                  color: "#444",
                   lineHeight: 1.6,
                 }}
               >
@@ -266,7 +283,7 @@ const Footer = () => {
           <Typography
             sx={{
               fontSize: { xs: "13px", md: "14px" },
-              color: "#666",
+              color: "#444",
             }}
           >
             © 2025 All rights reserved

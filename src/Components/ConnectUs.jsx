@@ -9,8 +9,10 @@ import {
   CardContent,
 } from "@mui/material";
 import * as motion from "motion/react-client";
+import { useNavigate } from "react-router-dom";
 
 const ConnectUs = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -72,6 +74,7 @@ const ConnectUs = () => {
               {/* Buttons */}
               <Stack direction="row" spacing={2}>
                 <Button
+                  onClick={() => navigate("/contact")}
                   variant="contained"
                   sx={{
                     background:
@@ -87,6 +90,7 @@ const ConnectUs = () => {
                   Contact Us
                 </Button>
                 <Button
+                  onClick={() => navigate("/ScheduleForm")}
                   variant="outlined"
                   sx={{
                     borderColor: "#24243e",
