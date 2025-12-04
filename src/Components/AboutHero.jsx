@@ -2,7 +2,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { keyframes } from "@mui/system";
-
+import { useNavigate } from "react-router-dom";
 // Assuming these animations are defined somewhere in your project
 const fadeSlideIn = keyframes`
   0% { opacity: 0; transform: translateY(20px); }
@@ -15,6 +15,7 @@ const glow = keyframes`
 `;
 
 const AboutHero = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -26,6 +27,7 @@ const AboutHero = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start",
+        mt: { xs: 8, md: 12 },
         px: { xs: 3, md: 10 },
         "&::before": {
           content: '""',
@@ -79,6 +81,7 @@ const AboutHero = () => {
 
         <Button
           variant="contained"
+          onClick={() => navigate("/contact")}
           sx={{
             background: "linear-gradient(90deg, #1e90ff, #00aaff)",
             padding: "5px 15px",
