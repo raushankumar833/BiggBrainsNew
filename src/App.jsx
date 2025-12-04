@@ -8,6 +8,7 @@ import Service from "./Pages/Service";
 import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
+import WhatsAppButton from "./Components/WhatsAppButton";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         {/*<Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} /> */}
       </Routes>
+      <WhatsAppButton/>
       <Footer/>
     </>
   );
