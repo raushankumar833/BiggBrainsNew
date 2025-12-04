@@ -17,14 +17,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import bgImage from "../assets/abcd.jpg";
+import FAQSection from "../Components/FAQSection";
+import ConnectUs from "../Components/ConnectUs";
 
 const Faqs = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredLetter, setHoveredLetter] = useState(null);
 
   // Split text for animation
-  const titleLine1 = "How";
-  const titleLine2 = "can we help you?";
+//   const titleLine1 = "How";
+  const titleLine2 = "How can we help you?";
 
   // Animation effect for letters
   useEffect(() => {
@@ -44,6 +46,7 @@ const Faqs = () => {
   };
 
   return (
+    <>
     <Box
       sx={{
         py: { xs: 6, md: 12 },
@@ -142,7 +145,7 @@ const Faqs = () => {
                   justifyContent: "center",
                 }}
               >
-                {titleLine1.split("").map((char, index) => (
+                {/* {titleLine1.split("").map((char, index) => (
                   <Box
                     key={index}
                     className="animated-letter"
@@ -173,7 +176,7 @@ const Faqs = () => {
                   >
                     {char === " " ? "\u00A0" : char}
                   </Box>
-                ))}
+                ))} */}
               </Box>
             </Typography>
           </Grow>
@@ -327,7 +330,7 @@ const Faqs = () => {
                   background: "transparent",
                   borderRadius: "20px",
                   fontSize: { xs: "16px", md: "18px" },
-                  padding: "10px 14px",
+                  padding: "8px 14px",
                   "&:before, &:after": {
                     display: "none",
                   },
@@ -351,6 +354,7 @@ const Faqs = () => {
                       sx={{ 
                         color: "#666", 
                         fontSize: 28,
+                        mb:2,
                         transition: "all 0.3s ease",
                         animation: searchQuery ? "pulse 2s infinite" : "none",
                         "@keyframes pulse": {
@@ -429,7 +433,11 @@ const Faqs = () => {
           </Box>
         </Fade>
       </Container>
+     
     </Box>
+    <FAQSection/>
+    <ConnectUs/>
+    </>
   );
 };
 
