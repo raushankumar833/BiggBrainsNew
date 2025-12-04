@@ -17,6 +17,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import bgImage from "../assets/abcd.jpg";
+import FAQSection from "../Components/FAQSection";
+import ConnectUs from "../Components/ConnectUs";
 
 const Faqs = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,6 +46,7 @@ const Faqs = () => {
   };
 
   return (
+    <>
     <Box
       sx={{
         py: { xs: 6, md: 12 },
@@ -429,7 +432,11 @@ const Faqs = () => {
           </Box>
         </Fade>
       </Container>
+     
     </Box>
+    <FAQSection/>
+    <ConnectUs/>
+    </>
   );
 };
 
