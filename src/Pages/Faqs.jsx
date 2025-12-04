@@ -16,7 +16,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import bgImage from "../assets/abcd.jpg";
+import bgImage from "../assets/faq.jpg";
 import FAQSection from "../Components/FAQSection";
 import ConnectUs from "../Components/ConnectUs";
 
@@ -93,7 +93,7 @@ const Faqs = () => {
               position: "absolute",
               width: Math.random() * 4 + 2,
               height: Math.random() * 4 + 2,
-              background: "rgba(255, 255, 255, 0.3)",
+            
               borderRadius: "50%",
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
