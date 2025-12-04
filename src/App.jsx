@@ -10,6 +10,8 @@ import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
 import TermAndCondition from "./Pages/TermAndCondition";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import WhatsAppButton from "./Components/WhatsAppButton";
+import ScheduleForm from "./Pages/SchduleForm";
 
 const App = () => {
   return (
@@ -24,9 +26,11 @@ const App = () => {
         <Route path="/join-us" element={<JoinUs />} />
         <Route path="/terms-and-conditions" element={<TermAndCondition />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/scheduleForm" element={<ScheduleForm />} />
         {/*<Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} /> */}
       </Routes>
+      <WhatsAppButton/>
       <Footer/>
     </>
   );
