@@ -228,7 +228,7 @@ export default function Navbar() {
             display: { xs: "none", md: "block" },
             "&:hover": { backgroundColor: "#6925c7" },
           }}
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/portfolio")}
         >
           Get Portfolio
         </Button>
