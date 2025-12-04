@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Anjali Verma",
     role: "Product Manager, TechCorp",
-    img: "https://images.unsplash.com/photo-1764592358977-a181a6e71af4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "src/assets/avatar.jpg",
     testimonial:
       "The team delivered beyond our expectations. Their strategy and execution are simply top-notch.",
     rating: 5,
@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Rohan Kapoor",
     role: "CEO, StartupX",
-    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80",
+    img: "src/assets/avatar.jpg",
     testimonial:
       "Working with them was a joy. Creative solutions, fast delivery, and excellent communication.",
     rating: 4,
@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Priya Singh",
     role: "CTO, Innovate Labs",
-    img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&q=80",
+    img: "src/assets/avatar.jpg",
     testimonial:
       "A dedicated team that goes above and beyond. They truly understand our vision.",
     rating: 5,
@@ -29,7 +29,7 @@ const testimonials = [
   {
     name: "Kabir Arora",
     role: "Lead Developer, CodeWorks",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80",
+    img: "src/assets/avatar.jpg",
     testimonial:
       "Highly skilled professionals delivering consistent results. Our collaboration has been phenomenal.",
     rating: 5,
