@@ -8,8 +8,13 @@ import {
   useTheme,
 } from "@mui/material";
 import Link from "@mui/material/Link";
+import { useEffect } from "react";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    document.title = "Privacy Policy | BiggBrains";
+  }, []);
+
   const theme = useTheme();
 
   return (

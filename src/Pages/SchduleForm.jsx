@@ -11,8 +11,13 @@ import {
 } from "@mui/material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { useEffect } from "react";
 
 const ScheduleForm = () => {
+  useEffect(() => {
+    document.title = "ScheduleForm | BiggBrains";
+  }, []);
+
   return (
     <Box
       sx={{

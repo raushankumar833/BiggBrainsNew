@@ -235,8 +235,13 @@
 // export default JoinUs;
 import React from "react";
 import { Container, Box, Grid, Typography, Card, CardContent } from "@mui/material";
+import { useEffect } from "react";
 
 const JoinUs = () => {
+  useEffect(() => {
+    document.title = "Join Us | BiggBrains";
+  }, []);
+  
   const features = [
     {
       title: "PERSONALIZATION",

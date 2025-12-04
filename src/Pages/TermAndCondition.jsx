@@ -20,6 +20,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import PrintIcon from "@mui/icons-material/Print";
 import DownloadIcon from "@mui/icons-material/Download";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { useEffect } from "react";
 
 /**
  * TermAndCondition.jsx
@@ -41,6 +42,10 @@ export default function TermAndCondition({ onAccept, lastUpdated = "December 4, 
   const handlePrint = () => {
     window.print();
   };
+
+  useEffect(() => {
+    document.title = "Terms & Conditions | BiggBrains";
+  }, []);
 
   const handleDownload = () => {
     // Simple text download of T&C - you can replace with PDF generator if you prefer

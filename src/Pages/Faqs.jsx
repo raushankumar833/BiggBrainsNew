@@ -21,6 +21,10 @@ import FAQSection from "../Components/FAQSection";
 import ConnectUs from "../Components/ConnectUs";
 
 const Faqs = () => {
+  useEffect(() => {
+    document.title = "Frequently Asked Questions | BiggBrains";
+  }, []);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredLetter, setHoveredLetter] = useState(null);
 

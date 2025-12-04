@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
+import { useEffect } from "react";
  
 const images = [
   "/src/assets/portfolio/1.png",
@@ -20,6 +21,10 @@ const images = [
 ];
 
 const Portfolio = () => {
+  useEffect(() => {
+    document.title = "Portfolio | BiggBrains";
+  }, []);
+
   const [activeImage, setActiveImage] = useState("");
 
   return (

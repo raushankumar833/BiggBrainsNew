@@ -23,10 +23,14 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 import PublicIcon from "@mui/icons-material/Public";
 import { PhoneIcon } from "lucide-react";
 import ConnectUs from "../Components/ConnectUs";
+import { useEffect } from "react";
 
 const Contact = () => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+  useEffect(() => {
+    document.title = "Contact-Us | BiggBrains";
+  }, []);
 
   return (
     <Box

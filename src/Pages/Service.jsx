@@ -16,6 +16,7 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 import { motion } from "framer-motion";
 import ConnectUs from "../Components/ConnectUs";
+import { useEffect } from "react";
 
 const whatWeDo = [
   {
@@ -47,6 +48,10 @@ const cardVariants = {
   }),
 };
 const Service = () => {
+  useEffect(() => {
+    document.title = "Services | BiggBrains";
+  }, []);
+
   return (
     <Box
       sx={{

@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Box, Typography, Button, LinearProgress, Stack, keyframes } from "@mui/material";
 import ConnectUs from "../Components/ConnectUs";
 import AboutHero from "../Components/AboutHero";
@@ -7,6 +8,9 @@ import Testimonial from "../Components/Testimonial";
 import OurTeam from "../Components/OurTeam";
 
 export default function AboutUs() {
+  useEffect(() => {
+    document.title = "About-Us | BiggBrains";
+  }, []);
   return (
     <>
       {/* Hero Section */}
