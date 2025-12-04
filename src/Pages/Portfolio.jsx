@@ -3,8 +3,8 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import React, { useState, useEffect } from "react";
-import { Box, Typography, Popover } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography } from "@mui/material";
 
 const images = [
   "/src/assets/portfolio/1.png",
@@ -20,36 +20,29 @@ const images = [
 ];
 
 const Portfolio = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const [activeImage, setActiveImage] = useState("");
-
-  const handleHover = (event, img) => {
-    setAnchorEl(event.currentTarget);
-    setActiveImage(img);
-  };
-
-  const handleLeave = () => {
-    setAnchorEl(null);
-    setActiveImage("");
-  };
-
-  const open = Boolean(anchorEl);
 
   return (
     <Box
       sx={{
         width: "100%",
-        minHeight: "100vh",
+        minHeight: { xs: "auto", md: "100vh" }, // mobile auto, desktop 100vh
         bgcolor: "#f5f7fb",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        py: 8,
-        mt:"1.5rem"
+        py: { xs: 4, md: 8 },
+        mt: "2rem",
       }}
     >
-      <Typography variant="h3" fontWeight="bold" mb={3}>
+      <Typography
+        variant="h3"
+        fontWeight="bold"
+        mb={{ xs: 3, md: 3 }}
+        textAlign="center"
+        fontSize={{ xs: "1.8rem", md: "2.5rem" }}
+      >
         Our Portfolio
       </Typography>
 
@@ -63,61 +56,39 @@ const Portfolio = () => {
         pagination={{ clickable: true }}
         style={{
           width: "80%",
-          height: "500px",
-          borderRadius: "1.5rem"
+          borderRadius: "1.5rem",
         }}
       >
         {images.map((img, i) => (
           <SwiperSlide key={i}>
             <Box
-              onMouseEnter={(e) => handleHover(e, img)}
-              onMouseLeave={handleLeave}
+              onMouseEnter={() => setActiveImage(img)}
+              onMouseLeave={() => setActiveImage("")}
               sx={{
                 position: "relative",
                 width: "100%",
-                height: "100%",
+                height: {
+                  xs: "auto", // mobile auto
+                  sm: "250px", // small tablets
+                  md: "400px", // desktop
+                  lg: "500px", // large desktop
+                },
                 borderRadius: "28px",
                 overflow: "hidden",
                 cursor: "pointer",
                 boxShadow: "0 20px 50px rgba(0,0,0,.15)",
-                "&:hover img": {
-                  transform: "scale(1.08)",
-                },
-                
-              }}
-            >
-              {/* IMAGE */}
-              <img
-                src={img}
-                alt="portfolio"
-                style={{
+                "& img": {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  transition: "0.6s ease",
-                }}
-              />
-
-              {/* HOVER OVERLAY */}
-              <Box
-                className="overlay"
-                sx={{
-                  position: "absolute",
-                  inset: 0,
-                  bgcolor: "rgba(0,0,0,0.6)",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  color: "#fff",
-                  fontSize: { xs: "1.5rem", md: "2rem" },
-                  fontWeight: "bold",
-                  opacity: 0,
-                  transition: "0.4s ease",
-                  pointerEvents: "none",
-                }}
-              >
-                Preview
-              </Box>
+                  transition: "transform 0.6s ease",
+                },
+                "&:hover img": {
+                  transform: { xs: "none", md: "scale(1.08)" },
+                },
+              }}
+            >
+              <img src={img} alt={`portfolio-${i}`} />
             </Box>
           </SwiperSlide>
         ))}
@@ -125,4 +96,5 @@ const Portfolio = () => {
     </Box>
   );
 };
+
 export default Portfolio;
